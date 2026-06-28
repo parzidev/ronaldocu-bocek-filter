@@ -1,0 +1,10 @@
+/* ===========================================================
+   Ronaldocu Böcek Filter — style.css
+   Sadece data-parzi-hidden attribute'u ile işaretlenen
+   tweetleri gizler. Agresif CSS kullanılmaz.
+   =========================================================== */
+
+/* Gizlenen tweetler */
+article[data-testid="tweet"][data-parzi-hidden="pt-flag"] {
+  display: none !important;
+}

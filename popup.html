@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ronaldocu Böcek Filter</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Başlık -->
+    <header class="popup-header">
+      <h1 class="popup-title">🪳 Ronaldocu Böcek Filter</h1>
+    </header>
+
+    <!-- Toggle -->
+    <div class="popup-row toggle-row">
+      <span class="popup-label">Filtre Durumu</span>
+      <label class="toggle-switch" for="toggleEnabled">
+        <input type="checkbox" id="toggleEnabled" checked />
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <!-- Durum yazısı -->
+    <div class="popup-row status-row">
+      <span id="statusText" class="status-text status-on">Aktif</span>
+    </div>
+
+    <!-- İstatistik -->
+    <div class="popup-row stat-row">
+      <span class="popup-label">Gizlenen Tweet</span>
+      <span id="hiddenCount" class="stat-value">0</span>
+    </div>
+
+    <!-- Bayrak listesi -->
+    <div class="flags-section">
+      <span class="popup-label">Filtrelenen Bayraklar</span>
+      <div id="flagTags" class="flag-tags">
+        <!-- JS tarafından doldurulacak -->
+      </div>
+    </div>
+
+    <!-- Yeni bayrak/emoji ekle -->
+    <div class="add-flag-section">
+      <div class="add-flag-input-row">
+        <input
+          type="text"
+          id="flagInput"
+          class="flag-input"
+          placeholder="Emoji veya bayrak yapıştır…"
+          maxlength="10"
+        />
+        <button id="addFlagBtn" class="add-flag-btn" type="button">Ekle</button>
+      </div>
+      <small class="add-flag-hint">Örn: 🇧🇷 🇦🇷 🏴 veya herhangi bir emoji</small>
+    </div>
+
+    <!-- Sayacı sıfırla -->
+    <button id="resetBtn" class="reset-btn" type="button">Sayacı Sıfırla</button>
+
+    <!-- Footer -->
+    <footer class="popup-footer">
+      <small>Sadece kendi tarayıcınızda çalışır. Kimseyi engellemez.</small>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

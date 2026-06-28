@@ -1,0 +1,316 @@
+/* ===========================================================
+   Ronaldocu Böcek Filter — popup.css
+   Popup arayüzü için premium, modern tasarım.
+   =========================================================== */
+
+/* ── Reset & Base ──────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #e7e9ea;
+  background: #16181c;
+  min-width: 300px;
+}
+
+/* ── Container ─────────────────────────────────────────────── */
+.popup-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Header ────────────────────────────────────────────────── */
+.popup-header {
+  text-align: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.popup-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #1d9bf0, #7856ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Rows ──────────────────────────────────────────────────── */
+.popup-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popup-label {
+  font-size: 13px;
+  color: #8b98a5;
+  font-weight: 500;
+}
+
+/* ── Toggle Switch ─────────────────────────────────────────── */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: #38444d;
+  transition: background 0.25s ease;
+}
+
+.toggle-slider::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #e7e9ea;
+  transition: transform 0.25s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background: linear-gradient(135deg, #1d9bf0, #7856ff);
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(20px);
+}
+
+/* ── Status Text ───────────────────────────────────────────── */
+.status-row {
+  justify-content: center;
+}
+
+.status-text {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.status-on {
+  color: #1d9bf0;
+  background: rgba(29, 155, 240, 0.12);
+}
+
+.status-off {
+  color: #f4212e;
+  background: rgba(244, 33, 46, 0.12);
+}
+
+/* ── Stat Value ────────────────────────────────────────────── */
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e7e9ea;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Flags Section ─────────────────────────────────────────── */
+.flags-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.flag-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 32px;
+  align-items: center;
+}
+
+.flag-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px 4px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.flag-tag:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.flag-tag-emoji {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.flag-tag-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: #536471;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.flag-tag-remove:hover {
+  color: #f4212e;
+  background: rgba(244, 33, 46, 0.15);
+}
+
+.flag-tags-empty {
+  font-size: 12px;
+  color: #536471;
+  font-style: italic;
+}
+
+/* ── Add Flag Section ──────────────────────────────────────── */
+.add-flag-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.add-flag-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.flag-input {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 16px;
+  color: #e7e9ea;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.flag-input::placeholder {
+  color: #536471;
+  font-size: 13px;
+}
+
+.flag-input:focus {
+  border-color: #1d9bf0;
+  background: rgba(29, 155, 240, 0.06);
+  box-shadow: 0 0 0 3px rgba(29, 155, 240, 0.12);
+}
+
+.add-flag-btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #1d9bf0, #7856ff);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.add-flag-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(29, 155, 240, 0.3);
+}
+
+.add-flag-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.add-flag-hint {
+  font-size: 11px;
+  color: #536471;
+  padding-left: 2px;
+}
+
+/* ── Shake Animation (duplikat uyarısı) ────────────────────── */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+
+.flag-input.shake {
+  animation: shake 0.4s ease;
+  border-color: #f4212e;
+}
+
+/* ── Reset Button ──────────────────────────────────────────── */
+.reset-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #8b98a5;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+  color: #e7e9ea;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.reset-btn:active {
+  transform: scale(0.98);
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+.popup-footer {
+  text-align: center;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.popup-footer small {
+  font-size: 11px;
+  color: #536471;
+  line-height: 1.4;
+}
